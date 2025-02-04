@@ -1,10 +1,10 @@
 const { v4: uuid4 } = require("uuid");
 
 class Filme {
-    constructor(title, singer, duration, play = 0 ) {
+    constructor(title, author duration, plays = 0 ) {
         this.id = uuid4();
         this.title = title;
-        this.singer = singer;
+        this.author = author;
         this.duration = duration;
         this.plays = plays;
     }
