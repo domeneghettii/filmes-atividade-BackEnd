@@ -19,7 +19,7 @@ const router = {
             lista.addFilme(movie);
             res.status(200).json({message: "Criado com sucesso ;)"});
         } catch (error) {
-            res.status(400).json({message: "Erro ao criar filme :("});
+            res.status(400).json({message: "Erro ao criar filme :(", error});
         }
     },
 
@@ -28,7 +28,7 @@ const router = {
             const filmes = lista.getAllFilmes();
             res.status(200).json(filmes);
         } catch (error) {
-            res.status(404).({message: 'Erro ao buscar filmes',error});
+            res.status(404).json({message: 'Erro ao buscar filmes',error});
         }
     },
 
@@ -65,7 +65,7 @@ const router = {
 
     getTop10Filmes: (req, res) => {
         try {
-            const filmes = lista.getAllFilmes();
+            const filmes = lista.getTop10Filmes();
             res.status(200).json(filmes);
         } catch (error) {
             res.status(404).json('Erro ao buscar Top10 :(', error);
