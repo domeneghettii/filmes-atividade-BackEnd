@@ -6,7 +6,7 @@ const lista = new FilmeList();
 const filme1 = new Filme('Maze Runner: Morrer ou correr','James Dashner', '1:53', 2 );
 lista.addFilme(filme1);
 
-listaAddFilme( new Filme('Cinderela', 'Charles Perrault', '1:45', 5));
+lista.addFilme( new Filme('Cinderela', 'Charles Perrault', '1:45', 5));
 
 const router = {
     addFilme: (req, res) => {
@@ -56,21 +56,12 @@ const router = {
         try {
             lista.deleteFilme(req.params.id);
             res.status(200).json({
-                message: 'Filme deletada com sucesso!!'
+                message: 'Filme deletado com sucesso!!'
             })
         } catch (error) {
             res.status(404).json('Erro ao deletar filme :(', error);
         }
     },
-
-    getTop10Filmes: (req, res) => {
-        try {
-            const filmes = lista.getTop10Filmes();
-            res.status(200).json(filmes);
-        } catch (error) {
-            res.status(404).json('Erro ao buscar Top10 :(', error);
-        }
-    }
 };
 
 module.exports = router;

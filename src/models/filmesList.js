@@ -27,10 +27,6 @@ class FilmeList {
         this.filme = this.filmes.filter(filme => filme.id != id);
     }
 
-    getTop10Filme() {
-        return this.filme.sort((a,b) => b.plays - a.plays).slice(0, 10);
-    }
-
     getTotalFilme(){
         return this.filmes.length;
     }
