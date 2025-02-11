@@ -48,7 +48,7 @@ const router = {
         try {
             res.status(200).json(lista.updateFilme(req.params.id, req.body));
         } catch (error) {
-            res.status(404).json('Erro ao atualizar :(', error)
+            res.status(404).json({ message: 'Erro ao atualizar :(', error: error });
         }
     },
 

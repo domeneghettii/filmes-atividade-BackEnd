@@ -19,7 +19,7 @@ class FilmeList {
 
     updateFilme(id, updateData) {
         const filme = this.getFilmeById(id);
-        Object.assign(song, updateData);
+        Object.assign(filme, updateData);
         return filme;
     }
 
